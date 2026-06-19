@@ -131,56 +131,7 @@
   revealEls.forEach(el => observer.observe(el));
 
   /* ===== FORM SUBMISSION ===== */
-  const modal = document.getElementById('modalOverlay');
-  const modalClose = document.getElementById('modalClose');
-  const modalMessage = document.getElementById('modalMessage');
-
-  function showModal(message) {
-    modalMessage.textContent = message;
-    modal.removeAttribute('hidden');
-    document.body.style.overflow = 'hidden';
-    modalClose.focus();
-  }
-
-  function closeModal() {
-    modal.setAttribute('hidden', '');
-    document.body.style.overflow = '';
-  }
-
-  if (modalClose) {
-    modalClose.addEventListener('click', closeModal);
-  }
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
-    });
-  }
-
-  function handleForm(formId, message) {
-    const form = document.getElementById(formId);
-    if (!form) return;
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const requiredFields = form.querySelectorAll('[required]');
-      let valid = true;
-      requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-          valid = false;
-          field.style.borderColor = '#e05c1a';
-          field.addEventListener('input', () => {
-            field.style.borderColor = '';
-          }, { once: true });
-        }
-      });
-      if (!valid) return;
-      showModal(message);
-      form.reset();
-    });
-  }
-
+  
   handleForm(
     'partnerForm',
     'Thank you for your enquiry. A member of the Kestrel team will be in touch to discuss your project soon.'
