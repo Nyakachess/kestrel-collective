@@ -4,12 +4,12 @@ import { Hero } from '@/components/landing/hero'
 import {
   GraduatesSection,
   HowSection,
-  NestSection,
   OpenSection,
   PartnersSection,
   PillarsSection,
   ProblemSection,
 } from '@/components/landing/sections'
+import { NestSection } from '@/components/landing/nest-section'
 import { PartnerSection } from '@/components/landing/partner-form'
 import { SiteFooter } from '@/components/landing/site-footer'
 

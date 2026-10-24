@@ -43,3 +43,6 @@ next-env.d.ts
 
 # source drop used to seed this repo; the extracted files are the source of truth
 /docs/*.zip
+
+# local Nest feed fixture (see docs/nest-integration.md); never commit
+/public/api/

@@ -1,28 +1,7 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { Eyebrow, SectionTitle } from './primitives'
 import { cn } from '@/lib/utils'
-
-function Eyebrow({ children, inverted }: { children: ReactNode; inverted?: boolean }) {
-  return (
-    <p
-      className={cn(
-        'font-mono text-[11px] font-medium uppercase tracking-[0.16em]',
-        inverted ? 'text-sidebar-muted' : 'text-primary',
-      )}
-    >
-      {children}
-    </p>
-  )
-}
-
-function SectionTitle({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <h2 className={cn('mt-3 text-balance font-display text-3xl font-semibold leading-tight md:text-4xl', className)}>
-      {children}
-    </h2>
-  )
-}
 
 const problems = [
   {
@@ -316,84 +295,6 @@ export function GraduatesSection() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  )
-}
-
-const people = [
-  { initials: 'AO', name: 'Amara Otieno', line: 'Python developer learning to work in codebases I did not write.', ext: 3, shared: 1, tone: 'bg-primary' },
-  { initials: 'DK', name: 'Daniel Kiprop', line: 'TypeScript, accessibility fixes, learning to test what I ship.', ext: 1, shared: 2, tone: 'bg-primary-mid' },
-  { initials: 'NA', name: 'Neema Achieng', line: 'Backend, Python, and the tests I used to skip.', ext: 2, shared: 1, tone: 'bg-success' },
-]
-
-const ladder = ['Make it run', 'Your page exists', 'Fix your defect', 'Write the test', 'Ship to shared code', 'Review a peer', 'Propose something']
-
-export function NestSection() {
-  return (
-    <section id="nest" className="scroll-mt-20 px-5 py-16 md:px-8 md:py-24">
-      <div className="mx-auto max-w-6xl">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <Eyebrow>Nest · nest.kestrelcollective.org</Eyebrow>
-            <SectionTitle className="max-w-[24ch]">Where first contributions live, and keep growing.</SectionTitle>
-            <p className="mt-4 max-w-[60ch] text-pretty leading-relaxed text-ink-2">
-              Nest is our own open-source project. Every graduate builds a page there through real pull requests,
-              fixes a real defect, ships to shared code, and reviews a peer. The page is theirs for good, and it
-              fills with verified work from any project they contribute to afterwards.
-            </p>
-          </div>
-          <a
-            href="https://nest.kestrelcollective.org"
-            className="inline-flex min-h-11 shrink-0 items-center gap-1 self-start rounded-full border border-primary px-5 text-sm font-semibold text-primary transition-colors hover:bg-primary-soft md:self-auto"
-          >
-            Browse contributor pages <ArrowUpRight className="size-4" aria-hidden />
-          </a>
-        </div>
-
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {people.map((p) => (
-            <article
-              key={p.name}
-              className="flex flex-col gap-3 rounded-xl border border-border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <div
-                className={cn('flex size-11 items-center justify-center rounded-full font-display font-semibold text-primary-foreground', p.tone)}
-                aria-hidden
-              >
-                {p.initials}
-              </div>
-              <h3 className="font-sans text-base font-bold text-foreground">{p.name}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{p.line}</p>
-              <p className="mt-auto flex items-center gap-3 font-mono text-[11px] text-muted-foreground">
-                <span className="flex items-center gap-1.5">
-                  <span className="size-2 rounded-full bg-success" aria-hidden />
-                  {p.ext} external
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="size-2 rounded-full bg-primary" aria-hidden />
-                  {p.shared} shared
-                </span>
-              </p>
-            </article>
-          ))}
-          <div className="flex flex-col gap-3 rounded-xl bg-sidebar p-5 text-sidebar-foreground">
-            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-sidebar-muted">The ladder</p>
-            <ol className="flex flex-col gap-1 text-sm">
-              {ladder.map((step, i) => (
-                <li key={step} className={cn('flex gap-2', i === 4 ? 'font-bold text-brand' : 'text-sidebar-foreground/85')}>
-                  <span className="w-3 font-mono text-xs leading-5 text-sidebar-muted">{i + 1}</span>
-                  {step}
-                </li>
-              ))}
-            </ol>
-            <p className="mt-auto text-xs text-sidebar-muted">An invitation, not a gate. Experienced? Start at 5.</p>
-          </div>
-        </div>
-        <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-          Practice on a learner&apos;s own page, contributions to Nest&apos;s shared code, and work accepted by other
-          projects are counted and shown separately. Pages appear only when their owner publishes them.
-        </p>
       </div>
     </section>
   )
