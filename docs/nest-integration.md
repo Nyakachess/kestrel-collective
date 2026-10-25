@@ -1,6 +1,6 @@
 # Nest integration
 
-Nest (`kestrel-collective/nest`) is a separate Astro site deployed at `NEXT_PUBLIC_NEST_URL`, which defaults to https://nest.kestrelcollective.org. This repo only links to it and reads one JSON feed.
+Nest (`Nyakachess/KestrelNest`) is a separate Astro site deployed at `NEXT_PUBLIC_NEST_URL`, which defaults to https://nest.kestrelcollective.org. This repo only links to it and reads one JSON feed.
 
 ## Feed contract
 
