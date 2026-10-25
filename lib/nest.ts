@@ -1,5 +1,5 @@
 export const NEST_URL = process.env.NEXT_PUBLIC_NEST_URL ?? 'https://nest.kestrelcollective.org'
-export const NEST_REPO_URL = 'https://github.com/Nyakachess/KestrelNest'
+export const NEST_REPO_URL = 'https://github.com/kestrel-collective/nest'
 
 export type NestPage = {
   handle: string
