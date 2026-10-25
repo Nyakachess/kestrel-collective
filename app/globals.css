@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme inline {
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Clash Display', 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-card: var(--card);
+  --color-card-foreground: var(--ink);
+  --color-primary: var(--teal);
+  --color-primary-foreground: var(--card);
+  --color-primary-soft: var(--teal-soft);
+  --color-primary-mid: var(--teal-mid);
+  --color-accent: var(--orange);
+  --color-accent-foreground: var(--card);
+  --color-accent-ink: var(--orange-ink);
+  --color-accent-soft: var(--orange-soft);
+  --color-success: var(--green);
+  --color-success-soft: var(--green-soft);
+  --color-marker: var(--marker);
+  --color-muted: var(--teal-soft);
+  --color-muted-foreground: var(--muted);
+  --color-ink-2: var(--ink-2);
+  --color-border: var(--line);
+  --color-border-strong: var(--line-dashed);
+  --color-brand: var(--brand);
+  --color-ring: var(--brand);
+  --color-sidebar: var(--teal-deep);
+  --color-sidebar-foreground: var(--paper);
+  --color-sidebar-muted: var(--mint);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-sidebar-border: var(--sidebar-border);
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+}
+
+/*
+ * Logo palette (default): derived from the Kestrel Collective wordmark.
+ * The logo cyan #24C2CE and orange #E35D06 fail WCAG contrast as small text on
+ * white, so --teal / --orange-ink are deepened versions of the same hues for
+ * text and filled buttons; the raw logo cyan is exposed as --brand for rings,
+ * active indicators and other non-text marks.
+ */
+:root {
+  color-scheme: light;
+  /* Brand */
+  --brand: #24c2ce;
+  --teal: #0a6e78;
+  --teal-deep: #0b3a40;
+  --teal-soft: #e6f6f7;
+  --mint: #8ee1e8;
+  --teal-mid: #3fa9b3;
+  --orange: #e35d06;
+  --orange-ink: #a8460a;
+  --orange-soft: #fcebdd;
+  --sidebar-active: #11505a;
+  --sidebar-border: #1a5560;
+  /* Surfaces and text */
+  --paper: #f7f9f9;
+  --card: #ffffff;
+  --ink: #12262a;
+  --ink-2: #35505a;
+  --muted: #5a6b70;
+  --line: #dfe6e7;
+  --line-dashed: #b3c6c9;
+  /* Status and evidence */
+  --green: #2e7d5b;
+  --green-soft: #e7f3ec;
+  --marker: #8fa19d;
+}
+
+/* Classic palette: the original Kestrel brand sheet. Enable with <html data-palette="classic">. */
+[data-palette='classic'] {
+  --brand: #0e5450;
+  --teal: #0e5450;
+  --teal-deep: #093734;
+  --teal-soft: #eaf2f0;
+  --mint: #9fd9cf;
+  --teal-mid: #569289;
+  --orange: #e8622c;
+  --orange-ink: #b3401e;
+  --orange-soft: #fbede5;
+  --sidebar-active: #0e4844;
+  --sidebar-border: #164a46;
+  --paper: #fafaf6;
+  --ink: #17211f;
+  --ink-2: #39504c;
+  --muted: #5e6b68;
+  --line: #e3e1d8;
+  --line-dashed: #b9c4c1;
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.005em;
+  }
+  ::selection {
+    background: var(--mint);
+    color: var(--teal-deep);
+  }
+}
