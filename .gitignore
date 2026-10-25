@@ -46,3 +46,4 @@ next-env.d.ts
 
 # local Nest feed fixture (see docs/nest-integration.md); never commit
 /public/api/
+kestrel-favicon.zip
