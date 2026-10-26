@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { navLinks } from './site-header'
 import { NEST_URL } from '@/lib/nest'
+import { appUrl } from '@/lib/app'
 
 export function SiteFooter() {
   return (
@@ -16,7 +17,7 @@ export function SiteFooter() {
                 {l.label}
               </a>
             ))}
-          <Link href="/rubric" className="hover:text-primary">Rubric</Link>
+          <Link href={appUrl('/rubric')} className="hover:text-primary">Rubric</Link>
           {/* The footer links to Nest itself; the in-page #nest anchor stays in the header only. */}
           <a href={NEST_URL} className="hover:text-primary">Nest</a>
         </nav>
