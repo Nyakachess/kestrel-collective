@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, type FormEvent } from 'react'
 import { ArrowUpRight } from 'lucide-react'
+import { appUrl } from '@/lib/app'
 
 const CONTACT_EMAIL = 'hello@kestrelcollective.org'
 const orgTypes = ['University', 'Business', 'Charity or NGO', 'Public sector', 'Other']
@@ -48,7 +49,7 @@ export function PartnerSection() {
               purpose.
             </p>
             <Link
-              href="/signup"
+              href={appUrl('/signup')}
               className="mt-4 inline-flex min-h-10 items-center gap-1 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-sidebar"
             >
               Join Kestrel <ArrowUpRight className="size-4" aria-hidden />

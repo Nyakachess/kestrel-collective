@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Menu } from 'lucide-react'
+import { appUrl } from '@/lib/app'
 
 export const navLinks = [
   { href: '#why', label: 'Why Kestrel' },
@@ -28,7 +29,7 @@ export function SiteHeader() {
 
         <div className="ml-auto hidden items-center gap-2 lg:flex">
           <Link
-            href="/signup"
+            href={appUrl('/signup')}
             className="inline-flex min-h-10 items-center rounded-full border border-primary px-4 text-sm font-semibold text-primary transition-colors hover:bg-primary-soft"
           >
             Join as a graduate
@@ -56,7 +57,7 @@ export function SiteHeader() {
             ))}
             <div className="mt-2 flex flex-col gap-2">
               <Link
-                href="/signup"
+                href={appUrl('/signup')}
                 className="flex min-h-11 items-center justify-center rounded-full border border-primary text-sm font-semibold text-primary"
               >
                 Join as a graduate

@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { Eyebrow, SectionTitle } from './primitives'
 import { cn } from '@/lib/utils'
+import { NEST_URL } from '@/lib/nest'
+import { appUrl } from '@/lib/app'
 
 const problems = [
   {
@@ -255,13 +257,13 @@ export function GraduatesSection() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/signup"
+                href={appUrl('/signup')}
                 className="inline-flex min-h-12 items-center rounded-full bg-accent px-6 font-semibold text-accent-foreground transition-colors hover:bg-accent-ink"
               >
                 Join Kestrel
               </Link>
               <Link
-                href="/rubric"
+                href={appUrl('/rubric')}
                 className="inline-flex min-h-12 items-center rounded-full border border-sidebar-muted px-6 font-semibold text-sidebar-foreground transition-colors hover:bg-sidebar-active"
               >
                 Read how we assess
@@ -309,7 +311,7 @@ export function OpenSection() {
           Evidence is built through delivery. Here is what you can check today.
         </SectionTitle>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          <Link href="/rubric" className="group rounded-xl border border-border bg-background p-6 transition hover:border-primary">
+          <Link href={appUrl('/rubric')} className="group rounded-xl border border-border bg-background p-6 transition hover:border-primary">
             <h3 className="flex items-center gap-1 font-sans text-base font-bold text-foreground group-hover:text-primary">
               The published rubric <ArrowUpRight className="size-4" aria-hidden />
             </h3>
@@ -318,7 +320,7 @@ export function OpenSection() {
               they start; partners can see what a level means.
             </p>
           </Link>
-          <a href="https://nest.kestrelcollective.org" className="group rounded-xl border border-border bg-background p-6 transition hover:border-primary">
+          <a href={NEST_URL} className="group rounded-xl border border-border bg-background p-6 transition hover:border-primary">
             <h3 className="flex items-center gap-1 font-sans text-base font-bold text-foreground group-hover:text-primary">
               Nest, our open-source project <ArrowUpRight className="size-4" aria-hidden />
             </h3>

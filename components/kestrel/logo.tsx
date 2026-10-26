@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { appUrl } from '@/lib/app'
 
 export function Logo({
   product = 'Contributors',
@@ -12,7 +13,7 @@ export function Logo({
   className?: string
 }) {
   return (
-    <Link href="/tickets" className={cn('flex items-center gap-3', className)} aria-label={`Kestrel Collective ${product}`}>
+    <Link href={appUrl('/tickets')} className={cn('flex items-center gap-3', className)} aria-label={`Kestrel Collective ${product}`}>
       <Image
         src="/kestrel-logo.png"
         alt=""
