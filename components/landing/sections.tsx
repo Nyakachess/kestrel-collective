@@ -172,14 +172,6 @@ const audiences = [
   ['Charities and NGOs', 'community organisations, education charities, non-profit tech teams.'],
 ]
 
-const briefs = [
-  'Student-engagement dashboard',
-  'Charity website review',
-  'Digital process project',
-  'AI-readiness assessment',
-  'Cybersecurity-awareness resource',
-]
-
 export function PartnersSection() {
   return (
     <section id="partners" className="scroll-mt-20 border-t border-border px-5 py-16 md:px-8 md:py-24">
@@ -215,23 +207,6 @@ export function PartnersSection() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="mt-10 rounded-2xl border border-border bg-card p-5 md:p-6">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <Eyebrow>Example briefs</Eyebrow>
-            <p className="text-xs text-muted-foreground">
-              Illustrative scopes. Case studies follow the first delivered projects; none will be invented.
-            </p>
-          </div>
-          <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {briefs.map((b, i) => (
-              <li key={b} className="rounded-lg border border-dashed border-border-strong p-3">
-                <span className="font-mono text-[10px] text-accent-ink">{String.fromCharCode(65 + i)}</span>
-                <p className="mt-1 text-sm font-semibold text-foreground">{b}</p>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

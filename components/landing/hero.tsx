@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowUpRight, Check } from 'lucide-react'
 import { appUrl } from '@/lib/app'
+import { EXAMPLE_RECORD_URL } from '@/lib/site'
 
 const proofs = [
   'Every contribution verified against a merged pull request',
@@ -78,7 +79,7 @@ export function Hero() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Amara O.</p>
-                    <p className="font-mono text-xs text-muted-foreground">cohort 2027-01</p>
+                    <p className="font-mono text-xs text-muted-foreground">cohort 2026-01</p>
                   </div>
                 </div>
                 <ul className="flex flex-col gap-4">
@@ -114,7 +115,7 @@ export function Hero() {
                       <span className="font-mono text-xs text-ink-2">{pr}</span>
                       <span className="text-xs text-muted-foreground">merged</span>
                       <Link
-                        href={appUrl('/verify/KES-2026-0001')}
+                        href={EXAMPLE_RECORD_URL}
                         className="ml-auto inline-flex items-center gap-0.5 text-xs font-bold text-primary hover:underline"
                       >
                         verify <ArrowUpRight className="size-3" aria-hidden />
