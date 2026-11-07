@@ -1,6 +1,9 @@
 export const NEST_URL = process.env.NEXT_PUBLIC_NEST_URL ?? 'https://nest.kestrelcollective.org'
 export const NEST_REPO_URL = 'https://github.com/kestrel-collective/nest'
 
+/** The Nest release the site's copy was written against. Shown when the feed does not name one. */
+export const NEST_RELEASE = '0.1.0'
+
 export type NestPage = {
   handle: string
   name: string

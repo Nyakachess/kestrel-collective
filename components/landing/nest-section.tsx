@@ -1,13 +1,14 @@
 import { ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { getNestFeed, initials, NEST_REPO_URL, NEST_URL, pickRecentPages } from '@/lib/nest'
+import { appUrl } from '@/lib/app'
+import { getNestFeed, initials, NEST_RELEASE, NEST_REPO_URL, NEST_URL, pickRecentPages } from '@/lib/nest'
 import { Eyebrow, SectionTitle } from './primitives'
 
 const ladder = ['Make it run', 'Your page exists', 'Fix your defect', 'Write the test', 'Ship to shared code', 'Review a peer', 'Propose something']
 
 const tones = ['bg-primary', 'bg-primary-mid', 'bg-success', 'bg-accent']
 
-const STAGE_ONE_ISSUES_URL = `${NEST_REPO_URL}/issues?q=is%3Aopen+label%3Astage%3A1`
+const NEST_ISSUES_URL = `${NEST_REPO_URL}/issues`
 
 export async function NestSection() {
   const feed = await getNestFeed()
@@ -21,7 +22,7 @@ export async function NestSection() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <Eyebrow>Nest · {host}</Eyebrow>
-            <SectionTitle className="max-w-[24ch]">Where first contributions live, and keep growing.</SectionTitle>
+            <SectionTitle className="max-w-[24ch]">Where first contributions live and keep growing.</SectionTitle>
             <p className="mt-4 max-w-[60ch] text-pretty leading-relaxed text-ink-2">
               Nest is our own open-source project. Every graduate builds a page there through real pull requests,
               fixes a real defect, ships to shared code, and reviews a peer. The page is theirs for good, and it
@@ -87,11 +88,20 @@ export async function NestSection() {
                 Contributor pages appear here as their owners publish them, and the project is open to clone now.
               </p>
               <a
-                href={STAGE_ONE_ISSUES_URL}
+                href={appUrl('/signup')}
                 className="mt-auto inline-flex items-center gap-1 self-start rounded-sm text-sm font-semibold text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
-                Start with Stage 1 on GitHub <ArrowUpRight className="size-4" aria-hidden />
+                Sign up to start Stage 1 <ArrowUpRight className="size-4" aria-hidden />
               </a>
+              <p className="text-xs leading-relaxed text-muted-foreground">
+                Already signed up?{' '}
+                <a
+                  href={NEST_ISSUES_URL}
+                  className="rounded-sm underline underline-offset-2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                >
+                  Your Stage 1 issue is waiting in the Nest repository.
+                </a>
+              </p>
             </div>
           )}
           <div className="flex flex-col gap-3 rounded-xl bg-sidebar p-5 text-sidebar-foreground">
@@ -110,7 +120,7 @@ export async function NestSection() {
         <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
           Practice on a learner&apos;s own page, contributions to Nest&apos;s shared code, and work accepted by other
           projects are counted and shown separately. Pages appear only when their owner publishes them.
-          {feed ? ` Updated from Nest release ${feed.release}.` : null}
+          {feed ? ` Updated from Nest release ${feed.release || NEST_RELEASE}.` : null}
         </p>
       </div>
     </section>
